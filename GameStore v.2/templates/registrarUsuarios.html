@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{%block titulo%}
+    modulo de registro de usuarios
+{%endblock%}
+
+{%block contenido%}
+    <h1>Registrando usuario nuevo</h1>
+    <form action="/registrarUsuario" method="post">
+        <p> nombre completo
+    <input type="text" name="nombreUsuario" id=""></p>
+    <p>direccion
+        <input type="text" name="direccion" id=""></p>
+    <p>telefono
+            <input type="tel" name="telefono" id=""></p>
+    <p>correo electrónico
+          <input type="email" name="correo" id=""></p>
+    <p>contraseña            
+        <input type="password" name="contrasena" id="">
+        </p>
+        <p>
+            elige la genero
+            <select name="genero" id="">
+                  <option value="F">Femenino</option>
+                  <option value="M">Masculino</option>
+            </select>
+        </p>
+        <input type="submit" value="registrar">
+    </form>
+{%endblock%}

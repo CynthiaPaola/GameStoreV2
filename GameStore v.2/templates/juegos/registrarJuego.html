@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+    {%block titulo%}
+        modulo de registro de juego
+    {%endblock%}
+
+{%block contenido%}
+    <h1>Registrando juego nuevo</h1>
+    <form action="/registrarJuego" method="post" enctype="multipart/form-data">
+        <p>
+            <label for="categoria">elige la categoria 
+            <select name="categoria" id="categoria">
+                {%for cate  in cates %}
+                <option value="{{cate.id_categoria}}">{{cate.nombre}}</option>  
+                 {%endfor%}     
+            </select>
+        </p>
+        <p>
+                <label for="nombreJuego">nombre del nuevo juego </label>
+                <input type="text" class="form-control" id="nombreJuego" placeholder="nombre" name="nombreJuego">
+            </p>
+            <p>
+                <label for="descJuego">descripcion del nuevo juego </label>
+                <input type="text" class="form-control" id="descJuego" placeholder="descripcion" name="descJuego">
+            </p>
+            <p>
+                <label for="precioJuego">precio del juego </label>
+                <input type="number" class="form-control" id="precioJuego" placeholder="precio" name="precioJuego">
+            </p>
+            <p>
+                <label for="existJuego">existencia del juego </label>
+                <input type="number" class="form-control" id="existJuego" placeholder="existencia" name="existJuego">
+            </p>
+            <p>
+                <label for="imagenJuego">foto </label>
+                <input type="file" class="form-control" id="imagenJuego" name="imagenJuego">
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Juego</button>
+    </form>
+{%endblock%}

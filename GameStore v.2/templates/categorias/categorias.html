@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+    {%block titulo%}  
+    Categorias
+    {%endblock%}
+{%block contenido%} 
+    <h1>Categorias disponibles</h1>
+    <table>
+        <tr>
+            <th> Numero</th>
+            <th>Nombre de la categoria</th>
+            <th>imagen</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
+        </tr>
+
+        {%for c in cate %}
+        <tr>
+            <td>{{c.id_categoria}}</td>
+            <td>{{c.nombre}}</td>
+            <td>
+                <img src="/categorias/consultarImagen/{{c.id_categoria}}"
+                 alt="imagen de la categoria" width="80px" height="80px">
+        </td>
+            <td><a href="/actualizarCategoria/{{c.id_categoria}}">Actualizar</a></td>
+
+            
+            <td><a href="#" onclick="eliminarCategoria({{c.id_categoria}})">Eliminar</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    <a href="/registrarCategoria">Registrar categoria nueva</a>
+    <br>
+    <a href="/regresar">regresar</a>
+{%endblock%} 

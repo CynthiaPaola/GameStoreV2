@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+    {%block titulo%}
+        Eliminacion de categoria
+    {%endblock%}
+
+{%block contenido%}
+    <h1>Eliminando categoria</h1>
+    <form action="/eliminarCategoria/{{cat.id_categoria}}" method="post">
+        <p>ingresa el nombre de la categoria
+    <input type="text" name="nombreCat" id="" value="{{cat.nombre}}" readonly></p>
+        <input type="submit" value="eliminar">
+    </form>
+{%endblock%}

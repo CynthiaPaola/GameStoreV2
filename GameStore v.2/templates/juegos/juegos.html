@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+    {%block titulo%}  
+    Juegos
+    {%endblock%}
+{%block contenido%} 
+    <h1>Juegos Disponibles</h1>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th> Numero</th>
+            <th>nombre del juego</th>
+            <th>descripcion</th>
+            <th>precio</th>
+            <th>imagen</th>
+            <th>actualizar</th>
+            <th>eliminar</th>
+        </thead>
+        {%for j in games %}
+        <tr>
+            <td>{{j.id_juego}}</td>
+            <td>{{j.nombre}}</td>
+            <td>{{j.precio}}</td>
+            <td>{{j.descripcion}}</td>
+            <td>
+                <img src="/juegos/consultarImagen/{{j.id_juego}}"
+                 alt="imagen del juego" width="80px" height="80px">
+            </td>   
+            <td>
+            <a href= "/actualizarJuego/{{j.id_juego}}">actualizar</a>
+            </td>
+            <td>
+            <a href="#" onclick="eliminarJuego({{j.id_juego}})">Eliminar</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    <a href="/registrarJuego">Registrar juego nuevo</a>
+    <br>
+    <a href="/regresar">regresar</a>
+    <br>
+    <div class="modal-footer">
+        <button class="btn btn-default" id="agregar" onclick="agregarCarrito()">Agregar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+    </div>
+    <script src="{{url_for('static',filename='js/juegos.js')}}"></script>
+{%endblock%} 

@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+    {%block titulo%}
+     Actualizacion de juegos
+    {%endblock%} 
+
+{%block contenido%}
+    <h1>Actualizando juego</h1>
+    <form action=" /actualizarJuego/{{game.id_juego}}" method="post"  
+    enctype="multipart/form-data">
+        <p> elige la categoria
+            <select name="categoria" id="">
+                {%for cate in cates %}
+                {%if cate.id_categoria == game.id_categoria%}
+                  <option value="{{cate.id_categoria}}" selected>{{cate.nombre}}</option>
+                {%else%} 
+                <option value="{{cate.id_categoria}}" >{{cate.nombre}}</option>
+                {%endif%}
+                {%endfor%}
+            </select>  
+        </p>
+        <p>ingresa el nombre del producto
+    <input type="text" name="nombreJuego" id="" value="{{game.nombre}}"></p>
+    <p>descripcion
+        <input type="text" name="descJuego" value="{{game.descripcion}}" id=""></p>
+        <p>precio
+            <input type="number" name="precioJuego" value="{{game.precio}}" id=""></p>
+        <p>existencia
+        <input type="number" name="existJuego" value="{{game.existencia}}"id=""></p>
+        <p>
+            imagen del producto
+            <input type="file" name="imagenJuego" 
+            value="/juegos/consultarImagen/{{game.id_juego}}" id="">
+        </p>
+        <input type="submit" value="modificar">
+    </form>
+{%endblock%}

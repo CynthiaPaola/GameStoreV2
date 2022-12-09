@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+    {%block titulo%}
+        Eliminacion de juego
+    {%endblock%}
+
+{%block contenido%}
+    <h1>Eliminando juego</h1>
+    <form action="/eliminarJuegos/{{game.id_juego}}" method="post">
+        <p>ingresa el nombre del producto
+    <input type="text" name="nombreJuego" id="" value="{{game.nombre}}" readonly></p>
+    <p>descripcion
+        <input type="text" name="descJuego" value="{{game.descripcion}}" id="" readonly></p>
+        <p>precio
+            <input type="number" name="precioJuego" value="{{game.precio}}" id="" readonly></p>
+        <p>existencia
+        <input type="number" name="existJuego" value="{{game.existencia}}"id="" readonly></p>
+        <p>
+            imagen del producto
+            <img src="/juegos/consultarImagen/{{game.id_juego}}"
+            alt="imagen del juego" width="80px" height="80px">
+        </p>
+        <input type="submit" value="eliminar">
+    </form>
+{%endblock%}

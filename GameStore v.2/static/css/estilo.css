@@ -1,0 +1,38 @@
+.tituloHeader{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header{
+    background: rgb(78, 67, 233);
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-repeat:no-repeat;
+    height: 50%;
+    margin: 0%;
+    padding-top:1%;
+    padding-bottom: 1%;
+    padding-left: 30%;
+}
+
+.linkButton{
+    background:rgb(131, 185, 235);
+    text-decoration-color: white;
+}
+table{
+    background:rgb(159, 197, 241);
+}
+h1{
+    color:blue;
+    font-size:15px;
+    font-weight: bold;
+    text-align: center;
+}
+body{
+    background-image: url('../img/pacman.jpg');
+    background-size: cover;
+}
+background-image{
+    opacity: 0.2;
+}

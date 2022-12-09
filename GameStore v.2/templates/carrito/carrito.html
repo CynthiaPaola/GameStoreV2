@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+    {%block titulo%}  
+    Carrito
+    {%endblock%}
+{%block contenido%} 
+    <h1>Listado del carrito</h1>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th>Numero</th>
+            <th>Juego</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
+        </thead>
+        {%for j in carrito %}
+            <tr>
+                <td><input type="checkbox" name="j.id_juego"></td>
+                <td>{{j.nombreJuego}}</td>
+                <td>{{j.cantidad}}</td>
+                <td>{{j.precio}}</td>
+                <td>
+                <a class="linkButton" href= "/actualizarCarrito/{{carr.id_carrito}}">Actualizar</a>
+                </td>
+            <td>
+            <a class="linkButton" href="#" onclick="eliminarCarrito({{carr.id_carrito}})">Eliminar</a>
+            </td>
+            </tr>
+        {%endfor%}
+    </table>
+    </div>
+{%endblock%} 

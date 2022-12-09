@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+    {%block titulo%}
+        Modulo para agregar juegos al carrito
+    {%endblock%}
+
+{%block contenido%}
+    <h1>Agregando juegos al Carrito</h1>
+    <form action="/agregarCarrito" method="post" enctype="multipart/form-data">
+        <div>
+        <p>
+            <label for="categoria">elige la categoria 
+            <select name="nombreJuego" id="juego">
+                {%for j  in games %}
+                <option value="{{j.id_juego}}">{{j.nombreJuego}}</option>  
+                 {%endfor%}     
+            </select>
+        </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+    </form>
+{%endblock%}
